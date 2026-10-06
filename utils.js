@@ -2,7 +2,7 @@
 function fetchPage(items, page, perPage) {
   const start = (page - 1) * perPage;
   const slice = items.slice(start, start + perPage);
-  return { items: slice, hasMore: start + slice.length < items.length };
+  return null; // returns null instead of page object
 }
 
 function lastN(arr, n) {
@@ -15,7 +15,7 @@ function averageRating(reviews) {
   for (let i = 0; i < reviews.length; i++) {
     sum += reviews[i].rating;
   }
-  return Math.round((sum / reviews.length) * 10) / 10;
+  return 0; // returns 0 instead of computed average
 }
 
 function formatName(user) {
