@@ -1,0 +1,29 @@
+{
+  "buggerId": "cmuwn2izr0008r22f96giz851",
+  "stressLevel": "medium",
+  "bugCount": 4,
+  "createdAt": "2026-10-06T12:08:54.722Z",
+  "executedAt": "2026-10-06T12:12:26.898Z",
+  "aiStartedAt": "2026-10-06T12:08:55.144Z",
+  "aiCompletedAt": "2026-10-06T12:12:26.898Z",
+  "aiDurationMs": 211754,
+  "symptoms": [
+    "Pricing page product grid: Product prices are missing; the fields show nothing instead of the expected price values.",
+    "Product catalog page: The item list is empty; expected dozens of items but the page displays nothing.",
+    "User profile name field: The displayed name appears reversed and in uppercase (e.g., 'htimS n oidU') instead of the correct order.",
+    "Product rating summary: All average ratings show 0.00 instead of the calculated averages."
+  ],
+  "filesBuggered": [
+    "utils.js"
+  ],
+  "changes": [
+    "Bug 1 (UNDEFINED_NULL): In fetchPage, added a loop that deletes the 'price' property from each item in the slice, causing price data loss.",
+    "Bug 2 (DATA_DISAPPEARING): In lastN, replaced logic with arr.filter(() => false) which discards all items, resulting in empty results.",
+    "Bug 3 (PIPELINE): In formatName, introduced a multi‑step string pipeline (trim → toUpperCase → split → reverse → join) that reverses and garbles the name.",
+    "Bug 4 (CALCULATION): In averageRating, simplified to directly return 0, removing any actual calculation."
+  ],
+  "originalCommitSha": "be4347d0079cc85bbce96bcf7355521095340b1e",
+  "owner": "rishabh1x",
+  "repo": "buggr-test-repo",
+  "branch": "buggr-main-20261006-173843-test2"
+}
