@@ -1,0 +1,25 @@
+{
+  "buggerId": "cmuwmv0pw0004r22fwi566u00",
+  "stressLevel": "low",
+  "bugCount": 2,
+  "createdAt": "2026-10-06T12:06:08.800Z",
+  "executedAt": "2026-10-06T12:06:36.640Z",
+  "aiStartedAt": "2026-10-06T12:06:09.222Z",
+  "aiCompletedAt": "2026-10-06T12:06:36.640Z",
+  "aiDurationMs": 27418,
+  "symptoms": [
+    "Product detail page: Expected actual average rating values, but got 0.00 for all items.",
+    "Product list page: Expected the product grid to display items, but got a completely blank area."
+  ],
+  "filesBuggered": [
+    "utils.js"
+  ],
+  "changes": [
+    "averageRating returns 0 unconditionally, overriding the actual average calculation.",
+    "fetchPage returns null instead of the paginated result object."
+  ],
+  "originalCommitSha": "be4347d0079cc85bbce96bcf7355521095340b1e",
+  "owner": "rishabh1x",
+  "repo": "buggr-test-repo",
+  "branch": "buggr-main-20261006-173547-test1"
+}
